@@ -176,7 +176,9 @@ const Cart = () => {
           amount: 500,
         });
         //need to implement success page
-        navigate("/success", {
+        //for now just redirecting to home page
+        //navigate("/success", {
+        navigate("/", {
           state: {
             stripeData: res.data,
             products: cart,

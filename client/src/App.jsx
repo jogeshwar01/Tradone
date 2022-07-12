@@ -11,10 +11,10 @@ import {
   Navigate
 } from "react-router-dom";
 import Success from "./pages/Success";
+import { useSelector } from "react-redux";
 
 const App = () => {
-  const user = true;  //just for temporary purpose
-  return (
+  const user = useSelector((state) => state.user.currentUser); return (
 
     <BrowserRouter>
       <Routes>
@@ -33,6 +33,7 @@ const App = () => {
         <Route path="/success" element={<Success />}>
         </Route>
 
+        {/* //as soon as we login with correct credentials,user exists and we are redirected to home page */}
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />}>
         </Route>
 
